@@ -1,6 +1,13 @@
 // prettier.config.js or .prettierrc.js
 module.exports = {
-	trailingComma: 'es5',
-	semi: true,
-	singleQuote: true,
+	"singleQuote": true,
+  "trailingComma": "all",
+  "printWidth": 100,
+  "endOfLine": "auto",
+  "overrides": [
+    {
+      "files": ".prettierrc",
+      "options": { "parser": "json" }
+    }
+  ]
 };
