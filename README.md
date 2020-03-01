@@ -1,9 +1,9 @@
 ## TODO
 1. eslint+prettier ok
 2. commit format 
-3. 路由解决方案
-4. redux方案 ok
-5. 国际化 ok
+3. 路由解决方案 react-router-dom
+4. redux方案 
+5. 国际化 react-intl
 
 ## 项目规范
 1. 框架选型
