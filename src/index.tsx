@@ -1,19 +1,26 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { renderRoutes, RouteConfig, RouteConfigComponentProps } from 'react-router-config';
+import { IntlProvider, useIntl } from 'react-intl';
 
 type RootMenu = React.ComponentType<RouteConfigComponentProps>;
 
-const Root: RootMenu = ({ route }) => (
-  <div>
-    <h1>Root</h1>
-    {/* child routes won't render without this */}
-    {renderRoutes(route?.routes)}
-  </div>
-);
+const Root: RootMenu = ({ route }) => {
+  const intl = useIntl();
+  return (
+    <div>
+      <h1>Root</h1>
+      <p>
+        {intl.formatMessage({
+          id: 'name',
+        })}
+      </p>
+      {/* child routes won't render without this */}
+      {renderRoutes(route?.routes)}
+    </div>
+  );
+};
 
 const Home: RootMenu = () => (
   <div>
@@ -58,7 +65,15 @@ const routes: RouteConfig[] = [
   },
 ];
 
+const EN = {
+  name: 'cy',
+};
+
 ReactDOM.render(
-  <BrowserRouter>{renderRoutes(routes)}</BrowserRouter>,
+  <BrowserRouter>
+    <IntlProvider locale="en" messages={EN}>
+      {renderRoutes(routes)}
+    </IntlProvider>
+  </BrowserRouter>,
   document.getElementById('root'),
 );
