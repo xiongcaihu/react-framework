@@ -4,16 +4,6 @@
         "strings": true
     },
     "editor.fontFamily": "JetBrains Mono",
-    "files.associations": {
-        "*.cjson": "jsonc",
-        "*.wxss": "css",
-        "*.wxs": "javascript"
-    },
-    "emmet.includeLanguages": {
-        "wxml": "html"
-    },
-    "minapp-vscode.disableAutoConfig": true,
-    "javascript.implicitProjectConfig.experimentalDecorators": true,
     "[javascriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
@@ -39,9 +29,6 @@
     },
     "path-intellisense.mappings": {
         "@": "${workspaceRoot}/src"
-    },
-    "[vue]": {
-        "editor.defaultFormatter": "octref.vetur"
     },
     "eslint.validate": [
         "javascript",
